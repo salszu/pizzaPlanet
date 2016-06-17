@@ -15,37 +15,12 @@ function initMap() {
 
 
 function fqAnswer() {
-	$('#fq-text').text('search a city, filter the resutlts, upvote or downvote your favorites');
+	$('#fq-text').text('FOOTER');
 	setTimeout(function(){
 		$('#fq-text').text('');
 	}, 5000);
 }
 
-
-
-// var styles = [
-//   {
-//     stylers: [
-//       { hue: "" }
-//       // { saturation: -20 }
-//     ]
-//   },{
-//     featureType: "road",
-//     elementType: "geometry",
-//     stylers: [
-//       { lightness: 100 },
-//       { visibility: "simplified" }
-//     ]
-//   },{
-//     featureType: "road",
-//     elementType: "labels",
-//     stylers: [
-//       // { visibility: "off" }
-//     ]
-//   }
-// ];
-
-// map.setOptions({styles: styles});
 
 
 

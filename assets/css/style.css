@@ -25,7 +25,7 @@ input {
 	background-color: white;
 	border: 1px solid #efe7d9;
 	padding: 10px;
-	height: 95%;
+	/*height: 100%;*/
 	margin: 10px;
 }
 
@@ -172,17 +172,15 @@ input {
 
 #map-div {
 	width: 100%;
-/*	height: 700px;
-*/	border: none;
+	border: none;
 	position: relative;
-	padding-top: 5%;
+	height: 100%;
 	filter: hue-rotate(340deg);
 
 }
 #mapdiv {
 	position: relative;
 	height: 100%;
-
 }
 
 .fa-thumbs-up {
@@ -308,7 +306,7 @@ input {
 }
 
 .help-tip:before{
-	content:'?';
+	content:'!';
 	font-weight: bold;
 	color:#F7EDC5;
 }

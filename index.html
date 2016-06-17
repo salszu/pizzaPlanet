@@ -1,148 +1,122 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<title>New Jersey Pizza Showdown</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 
-		<link rel="icon" type="image/png" href="images/njpizza.png" size=""/>
+<head>
+    <title>New Jersey Pizza Showdown</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="images/njpizza.png" size="" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
+</head>
 
-
-		    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-		    <link href='https://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
-	</head>
-
-	<body ng-app="myApp" ng-controller="masterCtrl">
-
-		<!--   -->
-		<div class="container-fluid">
-
-<!-- test test test -->
- 
-
-<div class="content img-rounded">
-        <div class="links">
-        <!-- tab links -->
-        	  <ul class="nav nav-tabs">
-    					<li>
-    						<a data-toggle="tab" href="#search">
-    						<i class="fa fa-search" aria-hidden="true"></i>
-    						</a>
-    					</li>
-    					<li>
-    						<a data-toggle="tab" href="#piechart">
-  							<i class="fa fa-pie-chart" aria-hidden="true"></i>
-  							</a>
-							</li>
-  					</ul>
-
-				<!-- help modal -->
-          <div class="help-tip">
-							<p>put words here. help the people!</p>
-					</div>
-				</div> <!-- .links -->
-        
-
-<!-- LOGO -->
-        <div class="logo">
-            <img src="images/pizzaLogo.png" class="text-center logoIMG">
-        </div>
-
-<br>
-
-
-<!-- begin tab content -->
-  <div class="tab-content">
-
-  <!-- search tab -->
-    <div id="search" class="tab-pane fade">
-
-
-					<!-- initial city search -->
-								<form id="form" class="">
-									<input type="text" id="query-city" placeholder="search city" class="">
-									<input id="submit-btn" type="button" onclick="" value="submit" ng-click="loadPlaces()" class="btn btn-danger btn-sm">
-									<span style="padding: 15px;" id="fq-text"></span>
-								</form>
-
-
-
-					
-<br>
-	<!-- display search results -->
-				<div id="search-div" class="" style="">
-				<h4>search results</h4>
-						
-						<!-- filter search results -->
-						<input title="" id="place-filter" ng-keyup="filterResults()" ng-model="filter" placeholder="filter specific place"/>
-						
-						<ul class="place-list">
-						<!-- hover element -->
-								<li title="Click Any List Item To Show Its Marker On the Map" class="fq-items" ng-repeat="place in places | filter: {placeName:filter} | orderBy: 'placeName'" ng-click="showMarker(this)">
-								<div class="">
-
-								<!-- display results, NAME, CITY, STATE -->
-									<b><h3>{{place.placeName}}</h3></b>
-										<span>{{place.placeCity}}</span>, 
-										<span>{{place.placeState}}</span> 
-										<p class="text-right votes">
-										<strong>
+<body ng-app="myApp" ng-controller="masterCtrl">
+    <!--   -->
+    <div class="container-fluid">
+        <!-- test test test -->
+        <div class="content img-rounded">
+            <div class="links">
+                <!-- tab links -->
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a data-toggle="tab" href="#search">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#piechart">
+                            <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#comments">
+                            <i class="fa fa-commenting" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#question">
+                            <i class="fa fa-question" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- .links -->
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="images/pizzaLogo.png" class="text-center logoIMG">
+            </div>
+            <br>
+            <!-- begin tab content -->
+            <div class="tab-content">
+                <!-- search tab -->
+                <div id="search" class="tab-pane fade">
+                    <!-- initial city search -->
+                    <form id="form" class="">
+                        <input type="text" id="query-city" placeholder="search city" class="">
+                        <input id="submit-btn" type="button" onclick="" value="submit" ng-click="loadPlaces()" class="btn btn-danger btn-sm">
+                        <span style="padding: 15px;" id="fq-text"></span>
+                    </form>
+                    <br>
+                    <!-- display search results -->
+                    <div id="search-div" class="" style="">
+                        <h4>search results</h4>
+                        <!-- filter search results -->
+                        <input title="" id="place-filter" ng-keyup="filterResults()" ng-model="filter" placeholder="filter specific place" />
+                        <ul class="place-list">
+                            <!-- hover element -->
+                            <li title="Click Any List Item To Show Its Marker On the Map" class="fq-items" ng-repeat="place in places | filter: {placeName:filter} | orderBy: 'placeName'" ng-click="showMarker(this)">
+                                <div class="">
+                                    <!-- display results, NAME, CITY, STATE -->
+                                    <b><h3>{{place.placeName}}</h3></b>
+                                    <span>{{place.placeCity}}</span>,
+                                    <span>{{place.placeState}}</span>
+                                    <p class="text-right votes">
+                                        <strong>
 											<i class="fa fa-thumbs-up" aria-hidden="true"></i> 
 											<i class="fa fa-thumbs-down" aria-hidden="true"></i>
 										</strong>
-										</p>
-									
-								</div>
-							</li>
-						</ul>
-					</div>
-					
-				</div><!--	/search-div  -->
-
-</div>
-<!-- #search tab -->
-
-
-    <div id="piechart" class="tab-pane fade">
-       piechart
-    </div>
-
-  </div>
-  <!-- tab-content -->
-</div> <!-- content div -->
-				
-						<div id="map-div" class="map-div mapdiv" style="height:98%">
-						</div>
-<!--     <span style="height:100px; width:100px; background-color:#F5F0E7">#F5F0E7</span>
-<span style="height:100px; width:100px; background-color:#a26b14">#a26b14</span>
-<span style="height:100px; width:100px; background-color:#a22414">#a22414</span>
-<span style="height:100px; width:100px; background-color:#92a214">#92a214</span> -->
-
-<footer>
-    <div class="footer text-right">
-    <span class="copyright">Kristin Gumbert, Sal Szurlej & Elizaur Reyes | 2016</span>
-
-				<br>
-			powered by:
-			<img src="images/google.png" height="15px;"> & <img src="images/foursquare.png" height="15px;">
-  	</div>
-</footer>
-
-		<script src="assets/js/jQuery.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-		<script src="assets/js/script.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSHPWjouiZzdAI_EhWkuuLsFMEGTgyYWE&callback=initMap"async defer></script>
-		
-<script type="text/javascript">
-$(document).ready(function(){
-    $(".nav-tabs a").click(function(){
-        $(this).tab('show');
-    });
-});
-</script>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--	/search-div  -->
+                <div id="piechart" class="tab-pane fade">
+                    piechart
+                </div>
+                <div id="comments" class="tab-pane fade">
+                    comments/firechat
+                </div>
+                <div id="question" class="tab-pane fade">
+                    question
+                </div>
+            </div>
+            <!-- tab-content -->
+        </div>
+        <!-- content div -->
+        <div id="map-div" class="map-div mapdiv" style="height:98%">
+        </div>
+        <div class="help-tip">
+            <p>Kristin Gumbert, Sal Szurlej & Elizaur Reyes powered by:
+                <img src="images/google.png" height="15px;"> &
+                <img src="images/foursquare.png" height="15px;">
+            </p>
+        </div>
+        <script src="assets/js/jQuery.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSHPWjouiZzdAI_EhWkuuLsFMEGTgyYWE&callback=initMap" async defer></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".nav-tabs a").click(function() {
+                $(this).tab('show');
+            });
+        });
+        </script>
 </body>
+
 </html>

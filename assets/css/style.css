@@ -82,6 +82,11 @@ input {
 }
 
 
+.logoIMG {
+	width: 100%;
+}
+
+
 .btn {
 	background-color: #d41c16;
 }

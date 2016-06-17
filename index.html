@@ -96,27 +96,33 @@
             </div>
             <!-- tab-content -->
         </div>
-        <!-- content div -->
-        <div id="map-div" class="map-div mapdiv" style="height:98%">
-        </div>
-        <div class="help-tip">
-            <p>Kristin Gumbert, Sal Szurlej & Elizaur Reyes powered by:
-                <img src="images/google.png" height="15px;"> &
-                <img src="images/foursquare.png" height="15px;">
-            </p>
-        </div>
-        <script src="assets/js/jQuery.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSHPWjouiZzdAI_EhWkuuLsFMEGTgyYWE&callback=initMap" async defer></script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $(".nav-tabs a").click(function() {
-                $(this).tab('show');
-            });
+    </div>
+    <!-- content div -->
+    <div id="map-div" class="map-div mapdiv" style="height:98%"></div>
+    <div class="help-tip">
+        <p>Kristin Gumbert, Sal Szurlej & Elizaur Reyes powered by:
+            <img src="images/google.png" height="15px;"> &
+            <img src="images/foursquare.png" height="15px;">
+        </p>
+    </div>
+    <script src="assets/js/jQuery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+    <!-- Firechat -->
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.css" />
+    <script src="https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.js"></script>
+    <!-- Google API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSHPWjouiZzdAI_EhWkuuLsFMEGTgyYWE&callback=initMap" async defer></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".nav-tabs a").click(function() {
+            $(this).tab('show');
         });
-        </script>
+    });
+    </script>
 </body>
 
 </html>

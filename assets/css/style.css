@@ -87,6 +87,10 @@ input {
 }
 
 
+.nav a:hover {
+	background-color: black;
+}
+
 .btn {
 	background-color: #d41c16;
 }

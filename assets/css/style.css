@@ -355,6 +355,64 @@ input {
 	left:0;
 }
 
+/*firechat styling*/ 
+
+#firechat-wrapper {
+        height: 475px;
+        max-width: 400px;
+        padding: 1px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        margin: 10px auto;
+        text-align: center;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 5px 25px #666;
+        -moz-box-shadow: 0 5px 25px #666;
+        box-shadow: 0 5px 25px #666;
+    }
+
+/*accordion footer*/
+
+#accordion {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .panel-default > .panel-heading {
+        background: #d41c16;
+    }
+    
+    .panel-heading {
+        padding: 0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    
+    .panel-group .panel {
+        border-radius: 0;
+    }
+    
+    .panel-title a {
+        color: #efe7d9;
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 10px 15px;
+        font-size: 24px;
+        font-family: Helvetica, Arial, sans-serif;
+        outline: none;
+    }
+    
+    .panel-title a:hover,
+    .panel-title a:focus,
+    .panel-title a:active {
+        text-decoration: none;
+        outline: none;
+    }
+
 /* CSS animation */
 
 @-webkit-keyframes fadeIn {

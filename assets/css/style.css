@@ -292,6 +292,7 @@ input {
     bottom: 0;
     width: 100%;
     margin: 0 auto;
+
 }
 
 .panel-default > .panel-heading {
@@ -306,6 +307,7 @@ input {
 
 .panel-group .panel {
     border-radius: 0;
+    border: none;
 }
 
 .panel-title a {
@@ -315,10 +317,11 @@ input {
     text-align: center;
     width: 100%;
     display: block;
-    padding: 2px;
+    padding: 1px;
     font-size: 24px;
     font-family: Helvetica, Arial, sans-serif;
     outline: none;
+    border: none;
 }
 
 .panel-title a:hover,

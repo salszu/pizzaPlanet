@@ -262,6 +262,8 @@ input {
 
 .qIcon {
     padding: 5px;
+    vertical-align: text-top;
+    color: #d41c16;
 }
 
 

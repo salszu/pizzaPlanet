@@ -387,6 +387,9 @@ input {
     text-shadow: 2px 2px 2px #B9642B; 
 }
 
+.panel-body {
+	padding: 3px;
+}
 
 /* CSS animation */
 

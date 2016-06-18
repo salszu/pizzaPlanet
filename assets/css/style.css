@@ -252,32 +252,7 @@ input {
 	transform: rotate(180deg);
 }
 
-@media (max-width: 500px) {
 
-	#query, #query-city {
-		display: block;
-		margin: auto;
-		margin-bottom: 5px;
-	}
-
-	input {
-		margin-bottom: 5px;
-	}
-
-}
-
-@media (max-width: 992px) {
-
-	.top-icon {
-		display: block;
-		z-index: 1000;
-	}
-
-	#mapdiv {
-		/*display: none;*/
-	}
-
-}
 
 
 
@@ -443,16 +418,7 @@ tr {
 
 
 
-@media screen and (max-width: 699px)  {
-    .content {
-        width: 95%;
-        margin: 0;
 
 
-    }
 
-    .mapdiv {
-    	float: bottom;
-    }
-}
 

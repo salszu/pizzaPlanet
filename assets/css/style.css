@@ -141,24 +141,24 @@ input {
 	display: none;
 }
 
-.fq-items, .food-items {
-	background-color: #916012;
-   margin-bottom: 5px;
+.fq-items,
+.food-items {
+    background-color: #efe7d9;
+    margin-bottom: 5px;
     padding: 5px;
     width: 100%;
-    color: #F5F0E7;
+    color: #B9642B;
     display: block;
     margin: auto;
     margin-bottom: 5px;
-    text-align: center;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
 }
-
-.fq-items:hover, .food-items:hover {
-	background-color: #815510;
-	color:#92a214;
-	transition: 0.3s;
+.fq-items:hover,
+.food-items:hover {
+    background-color: #e9decb;
+    color: #B9642B;
+    transition: 0.3s;
 }
 
 .footer{

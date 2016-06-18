@@ -74,15 +74,15 @@
                             <li title="Click Any List Item To Show Its Marker On the Map" class="fq-items" ng-repeat="place in places | filter: {placeName:filter} | orderBy: 'placeName'" ng-click="showMarker(this)">
                                 <div class="">
                                     <!-- display results, NAME, CITY, STATE -->
-                                    <b><h3>{{place.placeName}}</h3></b>
+                                    <b>{{place.placeName}} - </b>
                                     <span>{{place.placeCity}}</span>,
                                     <span>{{place.placeState}}</span>
-                                    <p class="text-right votes">
+                                    <span class="text-right votes">
                                         <strong>
 											<i class="fa fa-thumbs-up" aria-hidden="true"></i> 
 											<i class="fa fa-thumbs-down" aria-hidden="true"></i>
 										</strong>
-                                    </p>
+                                    </span>
                                 </div>
                             </li>
                         </ul>

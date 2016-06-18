@@ -204,14 +204,15 @@ App.controller('masterCtrl', function($scope) {
 			+ '</p>' + '<br>' + '<strong><i class="fa fa-thumbs-up" aria-hidden="true"></i><i class="fa fa-thumbs-down" aria-hidden="true"></i></strong>'
       +'</div>';
 
-			var marker = new google.maps.Marker({
-				position: new google.maps.LatLng(value.placeLat, value.placeLng),
-				title: value.placeName,
-				id: value.placeID,
-				animation: google.maps.Animation.DROP,
-				map: map
-			});
-
+			var image = 'http://i.imgur.com/H9fvwBc.png';
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(value.placeLat, value.placeLng),
+                title: value.placeName,
+                id: value.placeID,
+                animation: google.maps.Animation.DROP,
+                map: map,
+                icon: image
+            });
 			marker.addListener('click', function() {
 				console.log('Marker Animation');
 				if (marker.getAnimation() !== null) {

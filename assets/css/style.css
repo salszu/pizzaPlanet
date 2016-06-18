@@ -354,6 +354,7 @@ input {
         position: fixed;
         bottom: 0;
         width: 100%;
+       	margin: 0 auto;
     }
     
     .panel-default > .panel-heading {
@@ -376,7 +377,7 @@ input {
         text-align: center;
         width: 100%;
         display: block;
-        padding: 10px 15px;
+        padding: 10px 15px; 
         font-size: 24px;
         font-family: Helvetica, Arial, sans-serif;
         outline: none;
@@ -387,6 +388,11 @@ input {
     .panel-title a:active {
         text-decoration: none;
         outline: none;
+    }
+
+    .fa-question-circle {
+    	color: black;
+    	font-size: 24px;
     }
 
 /* CSS animation */

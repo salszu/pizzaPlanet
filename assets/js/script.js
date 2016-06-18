@@ -310,16 +310,25 @@ chatRef.onAuth(function(authData) {
             }
         });
     }
+
     //accordion collapse functions
+    $('.accIcon').html('<i class="fa fa-arrow-up accIcon" aria-hidden="true"></i>');
+
     $('#collapseOne').on('show.bs.collapse', function() {
+
+        $('.accIcon').html('<i class="fa fa-arrow-down accIcon" aria-hidden="true"></i>');
         $('.panel-heading').animate({
             backgroundColor: "#515151"
         }, 500);
     })
 
     $('#collapseOne').on('hide.bs.collapse', function() {
+        $('.accIcon').html('<i class="fa fa-arrow-up accIcon" aria-hidden="true"></i>');
         $('.panel-heading').animate({
             backgroundColor: "#00B4FF"
         }, 500);
     })
+
+
+
 });

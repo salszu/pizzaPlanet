@@ -359,7 +359,7 @@ input {
 
 #firechat-wrapper {
         height: 475px;
-        max-width: 400px;
+        max-width: 500px;
         padding: 1px;
         border: 1px solid #ccc;
         background-color: #fff;
@@ -396,6 +396,7 @@ input {
     }
     
     .panel-title a {
+    	background-image: url(https://s-media-cache-ak0.pinimg.com/736x/8d/5e/85/8d5e850896fdd781011b42fb3e4d56a7.jpg);
         color: #efe7d9;
         text-align: center;
         width: 100%;

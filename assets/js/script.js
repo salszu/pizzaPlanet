@@ -303,7 +303,7 @@ function fqAnswer() {
 		$('#fq-text').text('');
 	}, 5000);
 }
-
+//firebase authentication
 var chatRef = new Firebase("https://njpizzashowdown.firebaseIO.com");
 	    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
 	    chatRef.onAuth(function(authData) {
@@ -316,6 +316,7 @@ var chatRef = new Firebase("https://njpizzashowdown.firebaseIO.com");
 	                }
 	            });
 	        }
+	        //accordion collapse functions
 	        $('#collapseOne').on('show.bs.collapse', function() {
 	            $('.panel-heading').animate({
 	                backgroundColor: "#515151"

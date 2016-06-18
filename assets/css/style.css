@@ -36,6 +36,7 @@ input {
 	padding-right: 5px;
 	width: 10%;
 	display: inline-block;
+	float: right;
 }
 
 .links {

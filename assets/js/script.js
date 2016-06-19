@@ -332,3 +332,35 @@ chatRef.onAuth(function(authData) {
 
 
 });
+// thumbs up and thumbs down firebase 
+var clickCounter = [];  
+    
+
+    $(document).on('click', '.fa-thumbs-up', function() {
+            var icon = $(this);
+            var venueId = icon.attr('data-venueid');
+            console.log('venueId', venueId);
+            var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
+    
+            clickData.transaction(function(rating) {
+                console.log('rating', rating);
+              return (rating || 0) + 1;
+            });
+
+
+    });
+
+
+
+    $(document).on('click', '.fa-thumbs-down', function() {
+            var icon = $(this);
+            var venueId = icon.attr('data-venueid');
+            console.log('venueId', venueId);
+            var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
+
+            clickData.transaction(function(rating) {
+                console.log('rating', rating);
+              return (rating || 0) - 1;
+            });
+
+    });

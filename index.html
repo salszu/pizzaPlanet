@@ -36,7 +36,6 @@
             margin-right: 10px;
             width: 95%
         }
-
         .panel-body {
             text-align: center;
         }
@@ -104,57 +103,57 @@
                                     <b>{{place.placeName}} - </b>
                                     <span>{{place.placeCity}}</span>,
                                     <span>{{place.placeState}}</span>
-                                    <span class="text-right">
+                                    <span class="text-right votes">
                                         <div class="votes img-rounded">
-                                            <i class="fa fa-thumbs-down" aria-hidden="true"></i> 
+                                        <!-- data-venueid="{{place.placeID}}"  for both thumbs up and down-->
+                                            <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
                                             <span id="downCount">0</span>
-                                        </div>
-                                        <div class="votes img-rounded">
-                                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                                            <span id="upCount">0</span>
-                                        </div>
-                                    </span>
                                 </div>
-                            </li>
-                        </ul>
+                                <div class="votes img-rounded">
+                                    <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    <span id="upCount">0</span>
+                                </div>
+                                </span>
                     </div>
-                </div>
-                <!--    /search-div  -->
-                <div id="piechart" class="tab-pane fade text-center">
-                    <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%">
-                </div>
-                <div id="comments" class="tab-pane fade">
-                    <div id="firechat-wrapper"></div>
-                </div>
-                <div id="question" class="tab-pane fade">
-                    <table>
-                        <tr>
-                            <td>
-                                <h3><i class="fa fa-search qIcon" aria-hidden="true"></i></h3></td>
-                            <td></td>
-                            <td>Search for your city and filter to upvote or downvote New Jersey pizza establishments.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3><i class="fa fa-pie-chart qIcon" aria-hidden="true"></i></h3></td>
-                            <td></td>
-                            <td>View the pie chart to see which pizza New Jersey loves.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3><i class="fa fa-commenting qIcon" aria-hidden="true"></i></h3></td>
-                            <td></td>
-                            <td>Talk up your favorite places!</td>
-                        </tr>
-                    </table>
+                    </li>
+                    </ul>
                 </div>
             </div>
-            <!-- tab-content -->
+            <!--    /search-div  -->
+            <div id="piechart" class="tab-pane fade text-center">
+                <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%">
+            </div>
+            <div id="comments" class="tab-pane fade">
+                <div id="firechat-wrapper"></div>
+            </div>
+            <div id="question" class="tab-pane fade">
+                <table>
+                    <tr>
+                        <td>
+                            <h3><i class="fa fa-search qIcon" aria-hidden="true"></i></h3></td>
+                        <td></td>
+                        <td>Search for your city and filter to upvote or downvote New Jersey pizza establishments.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3><i class="fa fa-pie-chart qIcon" aria-hidden="true"></i></h3></td>
+                        <td></td>
+                        <td>View the pie chart to see which pizza New Jersey loves.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3><i class="fa fa-commenting qIcon" aria-hidden="true"></i></h3></td>
+                        <td></td>
+                        <td>Talk up your favorite places!</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <!-- tab-content -->
+    </div>
     </div>
     <!-- content div -->
     <div id="map-div" class="map-div mapdiv" style="height:100%"></div>
-
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -166,10 +165,9 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
-                    
-                <div style="float:right">
-                    Kristin Gumbert, Sal Szurlej & Elizaur Reyes
-                </div>
+                    <div style="float:right">
+                        Kristin Gumbert, Sal Szurlej & Elizaur Reyes
+                    </div>
                     <div style="float:left;">
                         powered by:
                         <img src="images/google.png" height="15px;"> &

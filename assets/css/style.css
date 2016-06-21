@@ -31,12 +31,13 @@ input {
 }
 
 
-.votes {
+#votes {
 	background-color: white;
 	padding-right: 5px;
-	width: 10%;
+	width: 32px;
 	display: inline-block;
 	float: right;
+	height: 100%;
 }
 
 .links {

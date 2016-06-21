@@ -103,18 +103,23 @@
                                     <b>{{place.placeName}} - </b>
                                     <span>{{place.placeCity}}</span>,
                                     <span>{{place.placeState}}</span>
-                                    <span class="text-right votes">
-                                        <div class="votes img-rounded">
+                                   
+
+                                <span class="text-right votes">
+                                        
+
+                                <div class="votes img-rounded" id="votes">
                                         <!-- data-venueid="{{place.placeID}}"  for both thumbs up and down-->
-                                            <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
-                                            <span id="downCount">0</span>
+                                    <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
+                                    <span id="downCount">0</span>
                                 </div>
-                                <div class="votes img-rounded">
+                                <div class="votes img-rounded" id="votes">
                                     <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i>
                                     <span id="upCount">0</span>
                                 </div>
                                 </span>
-                    </div>
+
+                            </div>
                     </li>
                     </ul>
                 </div>

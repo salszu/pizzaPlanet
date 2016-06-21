@@ -21,7 +21,7 @@ input {
 
 .content {
     position: absolute;
-    width: 35%;
+    width: 40%;
     z-index: 1;
     background-color: white;
     border: 1px solid #efe7d9;
@@ -292,6 +292,7 @@ input {
     bottom: 0;
     width: 100%;
     margin: 0 auto;
+    z-index: 1;
 
 }
 

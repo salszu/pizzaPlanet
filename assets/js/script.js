@@ -196,10 +196,10 @@ App.controller('masterCtrl', function($scope) {
 
             var infowindow = new google.maps.InfoWindow();
 
-            var infoBox = '<div class="gmData" style="padding: 10px;">' +
+            var infoBox = '<div class="gmData img-rounded" style="padding: 10px;">' +
                 '<h4>' + value.placeName + '</h4>' +
                 '<p>' + value.placeCity + ', ' + value.placeState + '</p>' + '<br>' + 
-                '<strong><div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div><div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div></strong>' + '</div>';
+                '<div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div><div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div>' + '</div>';
 
             var image = 'http://i.imgur.com/H9fvwBc.png';
             var marker = new google.maps.Marker({

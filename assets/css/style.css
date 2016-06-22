@@ -121,21 +121,8 @@ input {
     border: none;
 }
 
-#refresh {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    -webkit-transition: transition 0.3s;
-    transition: 0.3s;
-    bottom: 40px;
-    left: 15px;
-    background-color: #a22414;
-    opacity: 0.7;
-    z-index: 1000;
-}
 
 .gmnoprint {
-    color: red;
     display: none;
 }
 
@@ -149,7 +136,7 @@ input {
     margin-bottom: 5px;
     padding: 5px;
     width: 100%;
-    color: #B9642B;
+    color: #6e490d;
     display: block;
     margin: auto;
     margin-bottom: 5px;
@@ -160,7 +147,7 @@ input {
 .fq-items:hover,
 .food-items:hover {
     background-color: #e9decb;
-    color: #B9642B;
+    color: #6e490d;
     transition: 0.3s;
 }
 
@@ -186,8 +173,9 @@ input {
 }
 
 .fa-thumbs-up {
-    color: #92a214;
+    color:  #6A701A;
 }
+
 
 .fa {}
 
@@ -258,7 +246,7 @@ input {
 }
 
 .gmData {
-    color: #a26b14;
+    color: #6e490d;
 }
 
 .qIcon {
@@ -319,8 +307,8 @@ input {
     text-align: center;
     width: 100%;
     display: block;
-    padding: 1px;
-    font-size: 24px;
+    padding: 0px;
+    font-size: 20px;
     font-family: Helvetica, Arial, sans-serif;
     outline: none;
     border: none;
@@ -335,12 +323,14 @@ input {
 
 .accIcon {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     text-shadow: 2px 2px 2px #B9642B; 
 }
 
 .panel-body {
 	padding: 3px;
+	background-color: #efe7d9;
+	color: #6e490d;
 }
 
 /* CSS animation */

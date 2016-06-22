@@ -199,7 +199,15 @@ App.controller('masterCtrl', function($scope) {
             var infoBox = '<div class="gmData img-rounded" style="padding: 10px;">' +
                 '<h4>' + value.placeName + '</h4>' +
                 '<p>' + value.placeCity + ', ' + value.placeState + '</p>' + '<br>' + 
+<<<<<<< HEAD
                 '<div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div><div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div>' + '</div>';
+=======
+                '<strong><div class="votes" id="votes">' + 
+                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + 
+                '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div>' + 
+                '<div class="votes" id="votes">' + 
+                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + '" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div></strong>' + '</div>';
+>>>>>>> 50815fead280d3225269dac42b54e139704b0189
 
             var image = 'http://i.imgur.com/H9fvwBc.png';
             var marker = new google.maps.Marker({
@@ -340,14 +348,32 @@ var clickCounter = [];
     $(document).on('click', '.fa-thumbs-up', function() {
             var icon = $(this);
             var venueId = icon.attr('data-venueid');
+            var venueName = icon.attr('data-name');
             console.log('venueId', venueId);
             var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
     
-            clickData.transaction(function(rating) {
-                console.log('rating', rating);
-              return (rating || 0) + 1;
+            clickData.transaction(function(venue) {
+                if (venue) {
+                    venue.name = venueName;
+                    venue.rating++;
+                    return venue;
+                } else {
+                    return {
+                        name: venueName,
+                        rating: 1
+                    }
+                }                
             });
 
+
+    });
+
+    var pizzaDatabase = new Firebase("https://thinking-outloud.firebaseio.com/");
+
+
+
+
+    $('#generateChart').on('click', function() {
 
     });
 
@@ -356,12 +382,21 @@ var clickCounter = [];
     $(document).on('click', '.fa-thumbs-down', function() {
             var icon = $(this);
             var venueId = icon.attr('data-venueid');
+            var venueName = icon.attr('data-name');
             console.log('venueId', venueId);
             var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
 
-            clickData.transaction(function(rating) {
-                console.log('rating', rating);
-              return (rating || 0) - 1;
+            clickData.transaction(function(venue) {
+                if (venue) {
+                    venue.name = venueName;
+                    venue.rating--;
+                    return venue;
+                } else {
+                    return {
+                        name: venueName,
+                        rating: 0
+                    }
+                }                
             });
 
     });

@@ -100,7 +100,7 @@
                             <li title="Click Any List Item To Show Its Marker On the Map" class="fq-items" ng-repeat="place in places | filter: {placeName:filter} | orderBy: 'placeName'" ng-click="showMarker(this)">
                                 <div class="">
                                     <!-- display results, NAME, CITY, STATE -->
-                                    <b>{{place.placeName}} - </b>
+                                    <b>{{place.placeName}} </b>
                                     <span>{{place.placeCity}}</span>,
                                     <span>{{place.placeState}}</span>
                                    
@@ -110,12 +110,21 @@
 
                                 <div class="votes img-rounded" id="votes">
                                         <!-- data-venueid="{{place.placeID}}"  for both thumbs up and down-->
+<<<<<<< HEAD
                                     <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
                                     <span id="downCount"> 0</span> 
                                 </div>
                                 <div class="votes img-rounded" id="votes">
                                     <i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i>
                                     <span id="upCount"> 0</span> 
+=======
+                                    <i data-name="{{place.placeName}}" data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
+                                    <span id="downCount">0</span>
+                                </div>
+                                <div class="votes img-rounded" id="votes">
+                                    <i data-name="{{place.placeName}}" data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true" style=""></i>
+                                    <span id="upCount">0</span>
+>>>>>>> 50815fead280d3225269dac42b54e139704b0189
                                 </div>
                                 </span>
 
@@ -127,6 +136,7 @@
             <!--    /search-div  -->
             <div id="piechart" class="tab-pane fade text-center">
                 <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%">
+                <button id="generateChart">generate chart</button>
             </div>
             <div id="comments" class="tab-pane fade">
                 <div id="firechat-wrapper"></div>

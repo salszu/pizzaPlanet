@@ -199,15 +199,11 @@ App.controller('masterCtrl', function($scope) {
             var infoBox = '<div class="gmData img-rounded" style="padding: 10px;">' +
                 '<h4>' + value.placeName + '</h4>' +
                 '<p>' + value.placeCity + ', ' + value.placeState + '</p>' + '<br>' + 
-<<<<<<< HEAD
-                '<div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div><div class="votes" id="votes"><i data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div>' + '</div>';
-=======
                 '<strong><div class="votes" id="votes">' + 
                 '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + 
-                '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"> 0</span></div>' + 
+                '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"></span></div>' + 
                 '<div class="votes" id="votes">' + 
-                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + '" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"> 0</span></div></strong>' + '</div>';
->>>>>>> 50815fead280d3225269dac42b54e139704b0189
+                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + '" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"></span></div></strong>' + '</div>';
 
             var image = 'http://i.imgur.com/H9fvwBc.png';
             var marker = new google.maps.Marker({

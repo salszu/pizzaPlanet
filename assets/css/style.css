@@ -33,9 +33,12 @@
     #votes {
         background-color: white;
         padding-right: 5px;
-        width: 32px;
+        padding-left: 5px;
+        width: 20px;
+        margin-left: 2px;
         display: inline-block;
         float: right;
+        text-align: center;
         height: 100%;
     }
     

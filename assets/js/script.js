@@ -166,6 +166,7 @@ App.controller('masterCtrl', function($scope) {
                 $scope.places.push({
                     placeName: venue.name,
                     placeID: venue.id,
+                    placeAddress: venue.location.address,
                     placeCity: venue.location.city,
                     placeState: venue.location.state,
                     placeLat: venue.location.lat,
@@ -198,7 +199,7 @@ App.controller('masterCtrl', function($scope) {
 
             var infoBox = '<div class="gmData img-rounded" style="padding: 10px;">' +
                 '<h4>' + value.placeName + '</h4>' +
-                '<p>' + value.placeCity + ', ' + value.placeState + '</p>' + '<br>' + 
+                '<p>' + value.placeAddress + '<br>' + value.placeCity + ', ' + value.placeState  + '<br>' + 
                 '<strong><div class="votes" id="votes">' + 
                 '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + 
                 '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"></span></div>' + 

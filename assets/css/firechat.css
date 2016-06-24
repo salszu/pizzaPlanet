@@ -266,12 +266,12 @@
   display: block;
 }
 #firechat a {
-  color: #005580;
+  color: red;
 }
 #firechat a:visited,
 #firechat a:hover,
 #firechat a:active {
-  color: #005580;
+  color: red;
 }
 #firechat p {
   margin: 10px 0;
@@ -321,7 +321,7 @@
 }
 #firechat .nav > li > a {
   display: block;
-  background-color: #eeeeee;
+  background-color: red;
   text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
@@ -405,6 +405,7 @@
 #firechat .firechat-dropdown-toggle:active {
   outline: none;
   text-decoration: none;
+  color: red;
 }
 #firechat .firechat-dropdown-toggle.btn {
   padding: 4px 0 0;
@@ -924,6 +925,7 @@
   background-position: -18px 0;
   width: 17px;
   height: 13px;
+  display: none;
 }
 #firechat .icon.user-mute {
   background-position: -84px 0;

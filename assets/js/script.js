@@ -109,7 +109,7 @@ App.controller('masterCtrl', function($scope) {
         }
     });
 
-    //	Loads FourSquare from user input
+    //  Loads FourSquare from user input
     $scope.loadPlaces = function() {
 
         console.log("Load Places Clicked");
@@ -199,11 +199,11 @@ App.controller('masterCtrl', function($scope) {
 
             var infoBox = '<div class="gmData img-rounded" style="padding: 10px;">' +
                 '<h4>' + value.placeName + '</h4>' +
-                '<p>' + value.placeAddress + '<br>' + value.placeCity + ', ' + value.placeState  + '<br>' + 
-                '<strong><div class="votes" id="votes">' + 
-                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + 
-                '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"></span></div>' + 
-                '<div class="votes" id="votes">' + 
+                '<p>' + value.placeAddress + '<br>' + value.placeCity + ', ' + value.placeState + '<br>' +
+                '<strong><div class="votes" id="votes">' +
+                '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID +
+                '" class="fa fa-thumbs-down" aria-hidden="true"></i><span id="downCount"></span></div>' +
+                '<div class="votes" id="votes">' +
                 '<i data-name="' + value.placeName + '" data-venueid="' + value.placeID + '" class="fa fa-thumbs-up" aria-hidden="true"></i><span id="upCount"></span></div></strong>' + '</div>';
 
             var image = 'http://i.imgur.com/H9fvwBc.png';
@@ -339,113 +339,115 @@ chatRef.onAuth(function(authData) {
 
 });
 // thumbs up and thumbs down firebase 
-var clickCounter = [];  
-    
-
-    $(document).on('click', '.fa-thumbs-up', function() {
-            var icon = $(this);
-            var venueId = icon.attr('data-venueid');
-            var venueName = icon.attr('data-name');
-            console.log('venueId', venueId);
-            var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
-    
-            clickData.transaction(function(venue) {
-                if (venue) {
-                    venue.name = venueName;
-                    venue.rating++;
-                    return venue;
-                } else {
-                    return {
-                        name: venueName,
-                        rating: 1
-                    }
-                }                
-            });
+var clickCounter = [];
 
 
-    });
+$(document).on('click', '.fa-thumbs-up', function() {
+    var icon = $(this);
+    var venueId = icon.attr('data-venueid');
+    var venueName = icon.attr('data-name');
+    console.log('venueId', venueId);
+    var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
 
-    var pizzaDatabase = new Firebase("https://thinking-outloud.firebaseio.com/");
-
-
-        $('#generateChart').on('click', function() {
-        console.log('chart');
-        var ctx = $("#myChart");
-
-        $.ajax('https://thinking-outloud.firebaseio.com/.json?orderBy=%22rating%22&limitToLast=10').done(function(response) {
-            console.log(response);
-
-            var data = {
-                labels: [
-                    
-                ],
-                datasets: [
-                    {
-                        data: [],
-                        backgroundColor: [
-                            "#d2bb94",
-                            "#8d703c",
-                            "#48391e",
-                            "#d29929",
-                            "#d41c16",
-                            "#460907",
-                            "#6a701a",
-                            "#3d400f",
-                            "#454644",
-                            "#000000"
-                        ]                     
-                    }]
-            };
-
-            for (var venue in response) {
-                data.labels.push(response[venue].name);
-                data.datasets[0].data.push(response[venue].rating);
+    clickData.transaction(function(venue) {
+        if (venue) {
+            venue.name = venueName;
+            venue.rating++;
+            return venue;
+        } else {
+            return {
+                name: venueName,
+                rating: 1
             }
+        }
+    });
 
-            console.log('data', data);
 
-            var options =  {
-                responsive: false
-            };
+});
 
-            // For a pie chart
-            var myPieChart = new Chart(ctx,{
-                type: 'pie',
-                data: data,
-                options: options
-            });
+$(document).on('click', '.fa-thumbs-down', function() {
+    var icon = $(this);
+    var venueId = icon.attr('data-venueid');
+    var venueName = icon.attr('data-name');
+    console.log('venueId', venueId);
+    var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
+
+    clickData.transaction(function(venue) {
+        if (venue) {
+            venue.name = venueName;
+            venue.rating--;
+            return venue;
+        } else {
+            return {
+                name: venueName,
+                rating: 0
+            }
+        }
+    });
+
+});
+
+// generate chart
+var pizzaDatabase = new Firebase("https://thinking-outloud.firebaseio.com/");
+
+
+$('#generateChart').on('click', function() {
+    console.log('chart');
+    var ctx = $("#myChart");
+
+    $.ajax('https://thinking-outloud.firebaseio.com/.json?orderBy=%22rating%22&limitToLast=10').done(function(response) {
+        console.log(response);
+
+        var data = {
+            labels: [
+
+            ],
+            datasets: [{
+                data: [],
+                backgroundColor: [
+                    "#d2bb94",
+                    "#8d703c",
+                    "#48391e",
+                    "#d29929",
+                    "#d41c16",
+                    "#460907",
+                    "#6a701a",
+                    "#3d400f",
+                    "#454644",
+                    "#000000"
+                ]
+            }]
+        };
+
+        for (var venue in response) {
+            data.labels.push(response[venue].name);
+            data.datasets[0].data.push(response[venue].rating);
+        }
+
+        console.log('data', data);
+
+        var options = {
+            responsive: false
+        };
+
+        // For a pie chart
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
         });
-
-
-
-
-
-
-
-
     });
-   
 
 
 
-    $(document).on('click', '.fa-thumbs-down', function() {
-            var icon = $(this);
-            var venueId = icon.attr('data-venueid');
-            var venueName = icon.attr('data-name');
-            console.log('venueId', venueId);
-            var clickData = new Firebase("https://thinking-outloud.firebaseio.com/" + venueId);
 
-            clickData.transaction(function(venue) {
-                if (venue) {
-                    venue.name = venueName;
-                    venue.rating--;
-                    return venue;
-                } else {
-                    return {
-                        name: venueName,
-                        rating: 0
-                    }
-                }                
-            });
 
-    });
+
+
+
+});
+
+
+
+
+

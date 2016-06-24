@@ -40,13 +40,11 @@
         .panel-body {
             text-align: center;
         }
-
         .votes {
             display: block;
         }
     }
     </style>
-
 </head>
 
 <body ng-app="myApp" ng-controller="masterCtrl">
@@ -72,9 +70,9 @@
                             <i class="fa fa-commenting" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li>
-                        <a data-toggle="tab" href="#question">
-                            <i class="fa fa-question" aria-hidden="true"></i>
+                    <li class="active">
+                        <a data-toggle="tab" href="#question" class="active">
+                            <i class="fa fa-question" aria-hidden="false"></i>
                         </a>
                     </li>
                 </ul>
@@ -109,49 +107,46 @@
                                     <b>{{place.placeName}} </b>
                                     <span>{{place.placeCity}}</span>,
                                     <span>{{place.placeState}}</span>
-                                   
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--    /search-div  -->
+                <div id="piechart" class="tab-pane fade text-center" width="90%">
+                    <!-- <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%"> -->
+                    <button id="generateChart" class="btn btn-small btn-danger">generate chart</button>
+                    <canvas id="myChart" width="450" height="400" style="display: block; width: 450px; height:400px; "></canvas>
+                </div>
+                <div id="comments" class="tab-pane fade">
+                    <div id="firechat-wrapper"></div>
+                </div>
 
-
-
-                            </div>
-                    </li>
-                    </ul>
+                <div id="question" class="tab-pane fade in active" >
+                    <table>
+                        <tr>
+                            <td>
+                                <h3><i class="fa fa-search qIcon" aria-hidden="true"></i></h3></td>
+                            <td></td>
+                            <td>Search for your city and filter to upvote or downvote New Jersey pizza establishments.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3><i class="fa fa-pie-chart qIcon" aria-hidden="true"></i></h3></td>
+                            <td></td>
+                            <td>View the pie chart to see which pizza New Jersey loves.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3><i class="fa fa-commenting qIcon" aria-hidden="true"></i></h3></td>
+                            <td></td>
+                            <td>Talk up your favorite places!</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <!--    /search-div  -->
-            <div id="piechart" class="tab-pane fade text-center" width="90%">
-                <!-- <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%"> -->
-                <button id="generateChart" class="btn btn-small btn-danger">generate chart</button>
-                <canvas id="myChart" width="450" height="400" style="display: block; width: 450px; height:400px; "></canvas>
-            </div>
-            <div id="comments" class="tab-pane fade">
-                <div id="firechat-wrapper"></div>
-            </div>
-            <div id="question" class="tab-pane fade">
-                <table>
-                    <tr>
-                        <td>
-                            <h3><i class="fa fa-search qIcon" aria-hidden="true"></i></h3></td>
-                        <td></td>
-                        <td>Search for your city and filter to upvote or downvote New Jersey pizza establishments.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3><i class="fa fa-pie-chart qIcon" aria-hidden="true"></i></h3></td>
-                        <td></td>
-                        <td>View the pie chart to see which pizza New Jersey loves.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3><i class="fa fa-commenting qIcon" aria-hidden="true"></i></h3></td>
-                        <td></td>
-                        <td>Talk up your favorite places!</td>
-                    </tr>
-                </table>
-            </div>
+            <!-- tab-content -->
         </div>
-        <!-- tab-content -->
-    </div>
     </div>
     <!-- content div -->
     <div id="map-div" class="map-div mapdiv" style="height:100%"></div>
@@ -171,12 +166,11 @@
                     </div>
                     <div style="float:left;">
                         powered by:
-                        <img src="images/google.png" height="15px;">, 
-                        <img src="images/foursquare.png" height="15px;">, 
-                        <img src="images/firebase.png" height="10px;">, 
+                        <img src="images/google.png" height="15px;">,
+                        <img src="images/foursquare.png" height="15px;">,
+                        <img src="images/firebase.png" height="10px;">,
                         <img src="images/and.png" height="20px">
                         <img src="images/pizzaword.png" height="15px;">!!
-
                     </div>
                 </div>
             </div>
@@ -204,6 +198,9 @@
         $(".nav-tabs a").click(function() {
             $(this).tab('show');
         });
+
+
+
     });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>

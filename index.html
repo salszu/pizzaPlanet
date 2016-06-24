@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
     <!-- local css style -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/firechat.css" />
     <!-- local logo .png -->
     <link rel="icon" type="image/png" href="images/njpizza.png" size="" />
     <!-- font awesome cdn -->
@@ -39,8 +40,13 @@
         .panel-body {
             text-align: center;
         }
+
+        .votes {
+            display: block;
+        }
     }
     </style>
+
 </head>
 
 <body ng-app="myApp" ng-controller="masterCtrl">
@@ -105,19 +111,7 @@
                                     <span>{{place.placeState}}</span>
                                    
 
-                                <span class="text-right votes">
-                                        
 
-                                <div class="votes img-rounded" id="votes">
-                                        <!-- data-venueid="{{place.placeID}}"  for both thumbs up and down-->
-                                    <i data-name="{{place.placeName}}" data-venueid="{{place.placeID}}" class="fa fa-thumbs-down" aria-hidden="true"></i> 
-                                    <span id="downCount"></span>
-                                </div>
-                                <div class="votes img-rounded" id="votes">
-                                    <i data-name="{{place.placeName}}" data-venueid="{{place.placeID}}" class="fa fa-thumbs-up" aria-hidden="true" style=""></i>
-                                    <span id="upCount"></span>
-                                </div>
-                                </span>
 
                             </div>
                     </li>
@@ -127,7 +121,7 @@
             <!--    /search-div  -->
             <div id="piechart" class="tab-pane fade text-center">
                 <!-- <img src="http://zurb.com/playground/uploads/upload/upload/297/pizza.svg" width="90%"> -->
-                <button id="generateChart">generate chart</button>
+                <button id="generateChart" class="btn btn-small btn-danger">generate chart</button>
                 <canvas id="myChart" width="450" height="400" style="display: block; width: 450px; height:400px; "></canvas>
             </div>
             <div id="comments" class="tab-pane fade">

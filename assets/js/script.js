@@ -368,11 +368,63 @@ var clickCounter = [];
     var pizzaDatabase = new Firebase("https://thinking-outloud.firebaseio.com/");
 
 
+        $('#generateChart').on('click', function() {
+        console.log('chart');
+        var ctx = $("#myChart");
+
+        $.ajax('https://thinking-outloud.firebaseio.com/.json?orderBy=%22rating%22&limitToLast=10').done(function(response) {
+            console.log(response);
+
+            var data = {
+                labels: [
+                    
+                ],
+                datasets: [
+                    {
+                        data: [],
+                        backgroundColor: [
+                            "#d2bb94",
+                            "#8d703c",
+                            "#48391e",
+                            "#d29929",
+                            "#d41c16",
+                            "#460907",
+                            "#6a701a",
+                            "#3d400f",
+                            "#454644",
+                            "#000000"
+                        ]                     
+                    }]
+            };
+
+            for (var venue in response) {
+                data.labels.push(response[venue].name);
+                data.datasets[0].data.push(response[venue].rating);
+            }
+
+            console.log('data', data);
+
+            var options =  {
+                responsive: false
+            };
+
+            // For a pie chart
+            var myPieChart = new Chart(ctx,{
+                type: 'pie',
+                data: data,
+                options: options
+            });
+        });
 
 
-    $('#generateChart').on('click', function() {
+
+
+
+
+
 
     });
+   
 
 
 
